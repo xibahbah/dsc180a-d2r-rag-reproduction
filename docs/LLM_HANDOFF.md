@@ -39,6 +39,15 @@ Verify numerics with `python3 scripts/verify_results.py`; it uses only the Pytho
 standard library, no API, network or GPU. The final baseline and repair tables
 are tab-separated. RAGAS batch CSVs are comma-separated.
 
+## Scorer audit
+
+The installed qa-metrics 0.2.42 em_match uses normalized `ref in can` containment.
+The EM field is not strict whole-response equality or manual semantic accuracy.
+Do not call all 26 newly credited cases successful repairs. Saved comparisons
+show 26 newly credited, 4 newly uncredited, 173 credited in both, 297 in neither.
+These are separate stochastic runs, not fixed-initial-answer causal comparisons.
+Read docs/EXAMPLE_ANALYSIS.md and docs/REPRODUCTION_SUMMARY.md.
+
 ## Interpret correctly
 
 This is one scoped reproduction, not the whole paper. No FEVER, Thompson

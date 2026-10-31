@@ -1,0 +1,91 @@
+{
+  "note": "Saved scorer transitions across separate stochastic runs; not causal repair outcomes.",
+  "rows": 500,
+  "transitions": {
+    "uncredited_to_uncredited": 297,
+    "uncredited_to_credited": 26,
+    "credited_to_credited": 173,
+    "credited_to_uncredited": 4
+  },
+  "after_actions": {
+    "-1": 264,
+    "8": 16,
+    "0": 40,
+    "3": 16,
+    "5": 28,
+    "9": 8,
+    "1": 15,
+    "7": 28,
+    "10": 17,
+    "6": 15,
+    "4": 26,
+    "2": 27
+  },
+  "examples": [
+    {
+      "data_row": 3,
+      "question": "What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",
+      "gold": "Animorphs",
+      "before": "The provided context is insufficient regarding a science fantasy young adult series that has a set of companion books narrating the stories of enslaved worlds and alien species.",
+      "after": "The science fantasy young adult series that is told in first person and features a set of companion books narrating the stories of enslaved worlds and alien species is \"Animorphs.\" This series, written by K. A. Applegate, explores themes such as horror, war, dehumanization, sanity, morality, innocence, leadership, freedom, and growing up. The narrative is shared among six main characters who take turns providing their perspectives throughout the series.",
+      "before_score": false,
+      "after_score": true,
+      "before_label": "INSUFFICIENT_EVIDENCE_FAILURE",
+      "after_label": "WRONG_PREDICATE_FAILURE",
+      "action": "8",
+      "params": "{'reranker': True}"
+    },
+    {
+      "data_row": 24,
+      "question": "Which performance act has a higher instrument to person ratio, Badly Drawn Boy or Wolf Alice? ",
+      "gold": "Badly Drawn Boy",
+      "before": "The provided context is insufficient regarding the performance act of Wolf Alice and their instrument to person ratio. Therefore, I cannot determine which act has a higher instrument to person ratio based on the information provided.",
+      "after": "The provided context is insufficient regarding the performance act of Wolf Alice and its instrument to person ratio. The context only provides information about Badly Drawn Boy and does not mention Wolf Alice at all.",
+      "before_score": false,
+      "after_score": true,
+      "before_label": "INSUFFICIENT_EVIDENCE_FAILURE",
+      "after_label": "INSUFFICIENT_EVIDENCE_FAILURE",
+      "action": "10",
+      "params": "{'prompt_edit': 'simplify_qa'}"
+    },
+    {
+      "data_row": 281,
+      "question": "Flyboys stars which actor who was nominated for an Academy Award for \"127 Hours\"?",
+      "gold": "James Franco",
+      "before": "The provided context is insufficient regarding the actor who stars in \"Flyboys.\" However, it does mention that James Franco was nominated for an Academy Award for his role in \"127 Hours.\"",
+      "after": "The provided context is insufficient regarding the actor who starred in \"Flyboys\" and was nominated for an Academy Award for \"127 Hours\".",
+      "before_score": true,
+      "after_score": false,
+      "before_label": "NO_FAILURE",
+      "after_label": "NO_FAILURE",
+      "action": "5",
+      "params": "{'retriever': 'bm25', 'topk': 10, 'reindex': True}"
+    },
+    {
+      "data_row": 1,
+      "question": "Were Scott Derrickson and Ed Wood of the same nationality?",
+      "gold": "yes",
+      "before": "The provided context is insufficient regarding Scott Derrickson's nationality. It only provides information about Ed Wood, who was an American filmmaker. Therefore, I cannot determine if Scott Derrickson and Ed Wood were of the same nationality based on the provided context.",
+      "after": "The provided context is insufficient regarding Scott Derrickson's nationality. However, it does mention that Ed Wood is an American filmmaker. Therefore, without information about Scott Derrickson's nationality, I cannot determine if they were of the same nationality.",
+      "before_score": false,
+      "after_score": false,
+      "before_label": "NO_FAILURE",
+      "after_label": "NO_FAILURE",
+      "action": "-1",
+      "params": "{'retriever': 'dense', 'topk': 5, 'reranker': False, 'prompt_edit': 'simple_qa', 'reindex': False}"
+    },
+    {
+      "data_row": 2,
+      "question": "What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?",
+      "gold": "Chief of Protocol",
+      "before": "The provided context is insufficient regarding the government position held by the woman who portrayed Corliss Archer in the film Kiss and Tell.",
+      "after": "The provided context is insufficient regarding the government position held by the woman who portrayed Corliss Archer in the film Kiss and Tell.",
+      "before_score": false,
+      "after_score": false,
+      "before_label": "NO_FAILURE",
+      "after_label": "NO_FAILURE",
+      "action": "-1",
+      "params": "{'retriever': 'dense', 'topk': 5, 'reranker': False, 'prompt_edit': 'simple_qa', 'reindex': False}"
+    }
+  ]
+}

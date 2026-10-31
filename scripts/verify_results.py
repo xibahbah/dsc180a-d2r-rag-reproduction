@@ -28,7 +28,7 @@ def main():
         correct = sum(row['EM'].lower() == 'true' for row in rows)
         summary = json.loads((CAMPAIGN / (stage + '-summary.json')).read_text())
         check(math.isclose(correct / 5, summary['upstream_em_percent']), stage + ' EM mismatch')
-        print(f'{stage}: {correct}/500 correct; EM {correct / 5:.1f}%')
+        print(f'{stage}: {correct}/500 scorer-credited; upstream EM {correct / 5:.1f}%')
     for stage in ('metrics', 'metrics-repaired'):
         rows = []
         for path in sorted(CAMPAIGN.glob(stage + '-ragas-*.csv')):

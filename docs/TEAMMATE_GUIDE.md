@@ -23,10 +23,17 @@ comparison experiments beyond reproducing this configuration.
   faithfulness for each. Both metric stages have 500 scores for each metric.
 - A GTX 1080 Ti on UCSD DSMLP, with package repairs documented in the protocol.
 
+## Scoring caveat
+
+The authors' installed em_match uses normalized substring containment rather
+than strict equality. Treat these as authors' EM-labeled scores, not a count of
+manually verified correct answers. See EXAMPLE_ANALYSIS.md for a credited
+abstention, a plausible improvement and a diagnostic miss.
+
 ## Results to put in slides
 
 Baseline EM: 177/500 = 35.4%. Learned repair EM: 199/500 = 39.8%.
-Improvement: 4.4 percentage points, or 22 additional correct answers in aggregate.
+Improvement: 4.4 percentage points, or 22 additional scorer-credited answers in aggregate.
 Paper baseline: 36.2%; paper LinUCB: 39.8%.
 
 Answer relevance: 28.3951% to 31.7062%.

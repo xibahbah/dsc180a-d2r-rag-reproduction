@@ -11,11 +11,20 @@ RAGAS evaluations. Each RAGAS metric has 500 non-missing scores.
 | Faithfulness (%) | 68.58 | 69.1718 | 69.89 | 71.3962 |
 
 The learned repair policy improves exact match by 4.4 percentage points
-(22 additional correct answers in aggregate). Matching the reported 39.8%
+(22 additional scorer-credited answers in aggregate). Matching the reported 39.8%
 aggregate does not establish identical per-question predictions or reproduce
 the whole paper. This is one scoped HotpotQA/LinUCB reproduction, without
 multiple seeds or a statistical robustness claim. FEVER, Thompson Sampling,
 ablations and the group's Qwen/RAGBench adaptations remain outside this run.
+
+## Scorer implementation audit
+
+The installed qa-metrics 0.2.42 `em_match` normalizes answers and tests
+`if ref in can`. Therefore the saved EM field measures answer containment,
+not strict whole-response equality. A response may be credited despite abstaining
+when it contains the gold string. Original reported scores are retained for
+reproduction comparability, not relabeled as manual semantic correctness.
+See docs/EXAMPLE_ANALYSIS.md for exact saved examples and limitations.
 
 ## Spending
 

@@ -6,17 +6,25 @@ metric stages. This reproduces one configuration, not every experiment in the pa
 
 | Metric | Our baseline | Our learned repair | Paper baseline / LinUCB |
 |---|---:|---:|---:|
-| Exact match | 35.4% (177/500) | 39.8% (199/500) | 36.2% / 39.8% |
+| Authors' EM-labeled score | 35.4% (177/500) | 39.8% (199/500) | 36.2% / 39.8% |
 | Answer relevance | 28.40% | 31.71% | 28.39% / 31.66% |
 | Faithfulness | 69.17% | 71.40% | 68.58% / 69.89% |
 
-Repair improved exact match by **4.4 percentage points**. The matching aggregate
+The authors' EM-labeled score improved by **4.4 percentage points**. The matching aggregate
 39.8% does not imply identical predictions. Campaign accounting: **$1.408**,
 including failed-request reservations; successful token usage estimate **$1.398**.
 These are ledger estimates, not a billing statement. Original campaign cap: $5.
 
+**Metric caveat:** the installed authors' `em_match` scorer uses normalized
+answer containment, not strict whole-response exact match. A response can receive
+credit while abstaining if it mentions the gold answer. See the [example audit](docs/EXAMPLE_ANALYSIS.md).
+
 ## Start here
 
+- **One-page reproduction summary:** [summary](docs/REPRODUCTION_SUMMARY.md).
+- **Present it in three minutes:** [walkthrough](docs/PROFESSOR_WALKTHROUGH.md).
+- **See real answers and scoring pitfalls:** [example audit](docs/EXAMPLE_ANALYSIS.md).
+- **Reproduce another paper:** [shared pipeline and paper-specific steps](docs/REPRODUCTION_PIPELINE.md).
 - **Understand the experiment:** [teammate guide](docs/TEAMMATE_GUIDE.md).
 - **Give this repository to an LLM:** [LLM handoff](docs/LLM_HANDOFF.md).
 - **Read findings and caveats:** [full report](results/hotpotqa-full-linucb/REPORT.md).
@@ -36,7 +44,7 @@ python3 scripts/verify_results.py
 ```
 
 The original source is included directly under `D2R-RAG/`; no submodule setup is
-needed for this version. The standalone [handoff release](https://github.com/xibahbah/dsc180a-d2r-rag-reproduction/releases/tag/teammate-handoff-v1.1)
+needed for this version. The standalone [handoff release](https://github.com/xibahbah/dsc180a-d2r-rag-reproduction/releases/latest)
 also includes all tracked source, results and compressed checkpoints.
 
 ## Repository map
