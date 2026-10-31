@@ -51,7 +51,13 @@ def install(ledger):
             try:
                 payload = response.json()
             except (ValueError, UnicodeError):
-                return
+                # Let the SDK's bounded connection-error retries handle an
+                # empty/malformed successful response. Keep its reservation;
+                # the next attempt must reserve separately before sending.
+                raise httpx.RemoteProtocolError(
+                    'OpenAI returned a successful response with invalid JSON',
+                    request=request,
+                )
             if isinstance(payload, dict):
                 settle(ledger, reserved, payload)
 

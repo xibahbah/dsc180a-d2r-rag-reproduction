@@ -1,0 +1,18 @@
+{
+  "stage": "baseline",
+  "script": "experiments/analysis_shortanswer.py",
+  "campaign": "/home/x4gong/d2r-reproduction/results/hotpotqa-full-linucb",
+  "budget_usd": "5",
+  "training_examples": 500,
+  "validation_examples": 500,
+  "training_epochs": 2,
+  "model": "gpt-4o-mini",
+  "policy": "LinUCB",
+  "request_ceiling": 10000,
+  "max_output_tokens": 16384,
+  "hash_seed": 0,
+  "cpu_threads": 4,
+  "guard": "Reserve maximum; settle verified successful usage; retain failed reservations",
+  "code_fix": "Initialize params_updates on each training row",
+  "source_sha256": "b41041cf01bee7b5bdf32c19449352be0df2f091d5ab17705a5f725b339f37fd"
+}

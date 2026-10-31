@@ -9,6 +9,32 @@ import metered_guard
 
 
 class MeteredTests(unittest.TestCase):
+    def test_malformed_success_keeps_reservation_sync_and_async(self):
+        original, original_async = httpx.Client.send, httpx.AsyncClient.send
+        with tempfile.TemporaryDirectory() as directory:
+            ledger = Path(directory) / 'budget.json'
+            def request():
+                return httpx.Request('POST', 'https://api.openai.com/v1/chat/completions',
+                    json={'model': 'gpt-4o-mini', 'messages': [{'role': 'user', 'content': 'hi'}]})
+            try:
+                metered_guard.install(ledger)
+                transport = httpx.MockTransport(lambda req: httpx.Response(200, text=''))
+                with httpx.Client(transport=transport) as client:
+                    with self.assertRaises(httpx.RemoteProtocolError):
+                        client.send(request())
+                first = json.loads(ledger.read_text())['reserved_nanodollars']
+                async def run():
+                    async with httpx.AsyncClient(transport=transport) as client:
+                        with self.assertRaises(httpx.RemoteProtocolError):
+                            await client.send(request())
+                asyncio.run(run())
+                state = json.loads(ledger.read_text())
+                self.assertEqual(state['reserved_nanodollars'], 2 * first)
+                self.assertEqual(state['requests'], 2)
+                self.assertEqual(state.get('settled_requests', 0), 0)
+            finally:
+                httpx.Client.send, httpx.AsyncClient.send = original, original_async
+
     def test_multiple_completions_and_changed_allowance(self):
         previous = guard.MAX_COMPLETIONS
         try:
