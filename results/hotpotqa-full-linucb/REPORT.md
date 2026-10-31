@@ -60,5 +60,5 @@ budget records are included here. artifacts/full-linucb-policy.pkl.gz contains
 the compressed completed two-epoch checkpoint. Unpickle only trusted artifacts;
 loading it requires the compatible Python packages and upstream source.
 Downloaded datasets, models, retrieval caches, credentials and virtual environments
-are excluded. Use the standalone release ZIP for a copy that includes pinned
-upstream source. A normal GitHub source ZIP does not include submodule contents.
+are excluded. The teammate-handoff v1.1 layout vendors the pinned source directly, so a normal
+clone includes it. The standalone release ZIP also includes that source.

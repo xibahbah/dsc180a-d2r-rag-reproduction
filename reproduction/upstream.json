@@ -3,5 +3,6 @@
   "commit": "5573ce938cee8b79f2e73ccc05f8fff803f464ed",
   "initial_target": "HotpotQA, LinUCB",
   "generator": "gpt-4o-mini",
-  "status": "Preparation only; no experiment completed"
+  "status": "Completed HotpotQA/LinUCB campaign; see results/hotpotqa-full-linucb/REPORT.md",
+  "source_layout": "Vendored unmodified snapshot"
 }

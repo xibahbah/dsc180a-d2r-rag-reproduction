@@ -1,0 +1,50 @@
+simple_qa: 
+    You are a helpful assistant.
+
+    "Context:"
+    -------------
+    {context_str}
+    -------------
+
+    Answer the following Question based on the above Context only. Only answer from the Context. If the answer does not exist in the context, respond with 'The provided context is insufficient regarding ...'.
+    For yes/no questions, you must repond with a long answer containing "yes" or "no". 
+    For questions with "who", "what", "which", "how", "where", and "when", you should repond with a long answer. 
+
+    "Question:" 
+    {query_str}
+paraphrase_qa: 
+    You are a helpful assistant.
+
+    "Context:"
+    -------------
+    {context_str}
+    -------------
+
+    Paraphrase the following Question with additional context for clarity and detail. Then answer the revised question based on the above Context only.
+
+    "Question:"
+    {query_str}
+
+    Only answer from the Context. Do not answer based on your own knowledge ot prior belief.
+    If the answer does not exist in the context, respond with 'The provided context is insufficient regarding ...'.
+    For yes/no questions, you must repond with a long answer containing "yes" or "no". 
+    For questions with "who", "what", "which", "how", "where", and "when", you should repond with a long answer.  
+    Do not output the revised question.
+simplify_qa: 
+    You are a helpful assistant.
+
+    "Context:"
+    -------------
+    {context_str}
+    -------------
+
+    Rewrite the following Question to eliminate nested clauses or complex syntax. Ensure it does not become off-topic. Then answer the revised question based on the above Context only.
+
+    "Question:"
+    {query_str}
+
+    Only answer from the Context. Do not answer based on your own knowledge ot prior belief.
+    If the answer does not exist in the context, respond with 'The provided context is insufficient regarding ...'.
+    For yes/no questions, you must repond with a long answer containing "yes" or "no". 
+    For questions with "who", "what", "which", "how", "where", and "when", you should repond with a long answer. 
+    Do not output the revised question.

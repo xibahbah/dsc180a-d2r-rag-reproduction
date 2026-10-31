@@ -1,92 +1,113 @@
-## Completed HotpotQA / LinUCB campaign
+# D2R-RAG reproduction — DSC180A
 
-Full 500-case evaluation: baseline EM **35.4%**, learned repair EM **39.8%**
-(paper: 36.2% / 39.8%). Two training epochs and both 500-case RAGAS evaluations
-completed. Campaign accounted amount **$1.408**, including failed-request
-reservations, under the original $5 cap. This is a scoped reproduction, not all
-paper experiments. See [full report](results/hotpotqa-full-linucb/REPORT.md).
+**Completed:** original-size HotpotQA / LinUCB experiment, including 500-case
+baseline, two training epochs, 500-case repaired evaluation, and both RAGAS
+metric stages. This reproduces one configuration, not every experiment in the paper.
 
-# DSC 180A — D2R-RAG reproduction
+| Metric | Our baseline | Our learned repair | Paper baseline / LinUCB |
+|---|---:|---:|---:|
+| Exact match | 35.4% (177/500) | 39.8% (199/500) | 36.2% / 39.8% |
+| Answer relevance | 28.40% | 31.71% | 28.39% / 31.66% |
+| Faithfulness | 69.17% | 71.40% | 68.58% / 69.89% |
 
-Independent reproduction work for [Diagnosing and Repairing Factual Errors in RAG under Budget Constraints](https://proceedings.mlr.press/v318/hashemifar26a.html), Canadian AI 2026. See [attribution](NOTICE.md).
+Repair improved exact match by **4.4 percentage points**. The matching aggregate
+39.8% does not imply identical predictions. Campaign accounting: **$1.408**,
+including failed-request reservations; successful token usage estimate **$1.398**.
+These are ledger estimates, not a billing statement. Original campaign cap: $5.
 
-## Current status
+## Start here
 
-- The two-question HotpotQA integration test completed: baseline, two training epochs, saved LinUCB policy, and policy evaluation.
-- Baseline and policy evaluation each scored 1/2 with the authors' matcher. Both validation answers were diagnosed NO_FAILURE, so no repair was triggered on these two cases.
-- The smoke ledger reserved at most $0.020401 across 31 attempted API requests, including interrupted attempts. This is an upper bound, not an actual billing report.
-- The original-size HotpotQA/LinUCB campaign is running on DSMLP under a separately approved **$5 total cap**, shared across baseline, training, repair and RAGAS evaluation. It has not yet produced full-paper results.
-- The whole paper also includes Thompson Sampling, FEVER, comparison methods and ablations. Those are not completed by the initial HotpotQA/LinUCB campaign.
+- **Understand the experiment:** [teammate guide](docs/TEAMMATE_GUIDE.md).
+- **Give this repository to an LLM:** [LLM handoff](docs/LLM_HANDOFF.md).
+- **Read findings and caveats:** [full report](results/hotpotqa-full-linucb/REPORT.md).
+- **Check the numbers yourself, free and offline:** `python3 scripts/verify_results.py`.
+- **Understand original settings:** [protocol](reproduction/PROTOCOL.md).
 
-[Small-run report](results/20261031T003857Z-smoke-MeuJQS/REPORT.md) · [Protocol and reference values](reproduction/PROTOCOL.md) · [Full-run plan](reproduction/FULL_RUN_PLAN.md)
+Paper: [Diagnosing and Repairing Factual Errors in RAG under Budget Constraints](https://proceedings.mlr.press/v318/hashemifar26a.html).
+Original [authors' repository](https://github.com/CyberScienceLab/D2R-RAG), revision
+`5573ce938cee8b79f2e73ccc05f8fff803f464ed`. [Attribution](NOTICE.md).
 
-## Files for teammates
-
-| Path | Contents |
-|---|---|
-| `D2R-RAG/` | Authors' original source, pinned as a Git submodule |
-| `reproduction/` | Budget guards, tested runners, protocol, configuration and tests |
-| `results/` | Captured tables, logs, package versions, GPU details and reports |
-| `artifacts/` | Compressed policy checkpoint from the small integration test |
-| `scripts/export_bundle.py` | Produce a standalone ZIP including upstream source |
-| `dsmlp.py` | Optional laptop upload/status/download helper |
-
-API keys, SSH credentials, environments, downloaded datasets/models and retrieval-index caches are excluded. The original-size run's outputs will be added after they are collected. The full environment snapshot is provenance, not a portable pip installation file: it includes container-specific paths and unrelated preinstalled packages.
-
-## Get all source files
+## Get a complete copy
 
 ```sh
-git clone --recurse-submodules https://github.com/xibahbah/dsc180a-d2r-rag-reproduction.git
+git clone https://github.com/xibahbah/dsc180a-d2r-rag-reproduction.git
 cd dsc180a-d2r-rag-reproduction
+python3 scripts/verify_results.py
 ```
 
-For an existing clone, run `git submodule update --init --recursive`. GitHub's ordinary source ZIP does not include submodule contents; use the standalone bundle when distributing a complete snapshot.
+The original source is included directly under `D2R-RAG/`; no submodule setup is
+needed for this version. The standalone [handoff release](https://github.com/xibahbah/dsc180a-d2r-rag-reproduction/releases/tag/teammate-handoff-v1.1)
+also includes all tracked source, results and compressed checkpoints.
 
-## Set up inside a Linux GPU compute container
+## Repository map
 
-The successful run used Python 3.11.9, an NVIDIA GTX 1080 Ti (11,264 MiB), driver 535.161.08 and CUDA 12.1 PyTorch wheels. Critical dependency versions are recorded in `reproduction/constraints.txt`. Those versions and a real small pipeline were tested on DSMLP; a fresh installation on other machines remains to be validated.
+| Folder | Purpose |
+|---|---|
+| `D2R-RAG/` | Unmodified pinned authors' source; browse it directly |
+| `reproduction/` | Our execution wrappers, spending controls, protocol and tests |
+| `results/hotpotqa-full-linucb/` | Final full-size tables, reports, logs, plans, environment and ledger |
+| `results/20261031T003857Z-smoke-MeuJQS/` | Earlier two-case integration test; not the full result |
+| `artifacts/full-linucb-policy.pkl.gz` | Completed two-epoch trained policy |
+| `artifacts/smoke-linucb-policy.pkl.gz` | Separate tiny integration-test policy |
+| `scripts/` | Offline verification and standalone bundle export |
+| `docs/` | Human and LLM reading guides |
+
+Keys, credentials, environments and downloaded dataset/model/index caches are
+excluded. Reading and checking saved results requires no API key, GPU or DSMLP.
+Full package snapshots record provenance and are not portable installation files.
+
+## Run code on a Linux GPU worker
+
+A fresh installation on another machine still needs validation. Critical versions
+are constrained; the completed run used Python 3.11.9, GTX 1080 Ti, CUDA 12.1
+PyTorch, GPT-4o-mini and RAGAS 0.2.15. Drivers changed between workers; see report.
 
 ```sh
 python3.11 -m venv .venv
 .venv/bin/python -m pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu121
 .venv/bin/python -m pip install -r requirements-reproduction.txt
 .venv/bin/python -m unittest discover -s reproduction -p 'test_*guard.py' -v
-```
-
-Keep an OpenAI API key outside the repository in `~/.config/d2r-rag/env.sh`, readable only by your account. It should export `OPENAI_API_KEY`. Load it privately with `source ~/.config/d2r-rag/env.sh`. Never commit a key or print its value.
-
-```sh
 .venv/bin/python reproduction/preflight.py --environment --require-gpu
 ```
 
-Install and run Python only inside a DSMLP compute container. The login server is for connection and job submission. [UCSD instructions](https://support.ucsd.edu/services?id=kb_article_view&sysparm_article=KB0032269).
+Store your own key outside this repository in `~/.config/d2r-rag/env.sh` with
+restricted file permissions. It should export `OPENAI_API_KEY`. Never print or
+commit the value. Load it privately before execution.
 
-## Safe previews and runs
-
-The full preview performs no model download or paid requests:
+This command is only a **preview**, with no model download or paid requests:
 
 ```sh
 .venv/bin/python reproduction/full_run.py baseline --campaign results/hotpotqa-full-linucb --budget-usd 5 --dry-run
 ```
 
-The approved DSMLP campaign uses `bash reproduction/campaign.sh`. It runs five stages sequentially, writes stage logs and `status.json`, and stops on an error or exhausted allowance. A file lock prevents launching two copies of that campaign. Existing completed stages are skipped. Do not launch it on a second machine or delete its spending ledger to reset an allowance.
+`bash reproduction/campaign.sh` executes the five stages, skips `.done` stages,
+and preserves the existing ledger. In this completed snapshot it should skip all
+five. Do not delete markers, reset the ledger or reuse this historical campaign
+for a fresh experiment. A new paid experiment needs its own explicit budget and
+output plan; it is not needed to inspect these findings.
 
-The full guard reserves a conservative maximum before every HTTPX API attempt, then settles verified successful usage at the recorded GPT-4o-mini rates. Failed/unaccounted requests retain their maximum reservations. Budgets persist across stages and restarts; changing an existing allowance is rejected. This controls these runners, not other apps using the same OpenAI account. The cap can stop a campaign before completion.
+The HTTP guard reserves before each attempt and settles verified successful usage.
+Failed attempts retain reservations. The $5 cap controls these runners, not other
+apps on the account. The technical request ceiling was raised from 10,000 to
+50,000 after an interruption; the dollar allowance and original counter persisted.
 
-The separate smoke runner uses two questions per split, a 512-token output cap, a 40-attempt ceiling and a persistent $1 ledger. See its source for stage options. Neither the small data nor its results should be reported as reproducing the paper's percentages.
+On DSMLP, run Python only inside compute workers, not the login host. Course
+storage paths and recovery details are in [RECOVERY.md](reproduction/RECOVERY.md).
+`dsmlp.py` is an optional transfer helper; copy `dsmlp.example.json` to ignored
+`dsmlp.json` and use your own account. It is not needed for reading this repo.
 
-The in-memory training wrapper initializes a variable that can otherwise be referenced before assignment. Original upstream source files remain unchanged. Timing and VRAM fields follow the original code; diagnostics are outside its timing snapshot, and the 6 MiB repair budget measures incremental allocation rather than all resident model memory.
+## Scope and interpretation
 
-## Transfer and share results
+The wrapper fixes a training variable in memory while keeping upstream files
+unchanged. Source latency excludes diagnosis; source VRAM is incremental MiB,
+not full resident memory. See the full report before comparing resource budgets.
+FEVER, Thompson Sampling, ablations, repeated seeds and the group's Qwen/RAGBench
+adaptations remain future work. Do not call this a reproduction of the whole paper.
 
-For the laptop helper, copy `dsmlp.example.json` to `dsmlp.json` and fill in your own UCSD username. Configure normal SSH access first. Your local configuration is ignored by Git.
-
-On DSMLP, inspect `results/hotpotqa-full-linucb/status.json` and the campaign logs. Download reports/tables/checkpoints after a run, preserving the budget ledger even after errors. Large downloaded model/data/index caches are reproducible inputs and are not repository artifacts. Do not restart Jupyter while a stage is executing; a restart can terminate its process.
-
-To produce a standalone snapshot from a Git checkout:
+To export a complete snapshot after staging new files:
 
 ```sh
 python3 scripts/export_bundle.py
 ```
 
-This writes `dist/d2r-rag-reproduction.zip` and its SHA-256 checksum. It includes tracked results, compressed policy artifacts and the pinned upstream source, with no Git metadata or local environments.
+The script creates `dist/d2r-rag-reproduction.zip` and its SHA-256 checksum.

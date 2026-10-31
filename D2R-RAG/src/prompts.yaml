@@ -1,0 +1,81 @@
+simple_qa: 
+    You are a fact checking assistant.
+    Your task is to determine whether the context supports, refutes, or does not provide enough information about the claim.
+
+    "Context:"
+    -------------
+    {context_str}
+    -------------
+
+    "Claim:" 
+    {query_str}
+
+    Output strictly in valid JSON format only, with no extra text, explanations, or comments.
+
+    "Output format:"
+    {
+    "label:" "SUPPORTS" | "REFUTES" | "NOTENOUGHINFO",
+    "response:" "short, direct evidence extracted or paraphrased from context"
+    }
+
+    "Follow these rules carefully:"
+    1. "SUPPORTS:" if the context explicitly confirms the claim.
+    2. "REFUTES:" if the context explicitly contradicts the claim.
+    3. "NOTENOUGHINFO:" if the context lacks direct or clear information about the claim, even if it is indirectly related or mentions similar facts.
+    4. "response" must be a short, direct evidence to justify your selected label, based on the context.
+paraphrase_qa: 
+    You are a fact checking assistant.
+    Your task is to determine whether the context supports, refutes, or does not provide enough information about the claim.
+
+    "Context:"
+    -------------
+    {context_str}
+    -------------
+
+    "Claim:" 
+    {query_str}
+
+    First, paraphrase the claim with additional context for clarity and detail. Ensure the meaning or the facts in the claim does not change.
+    Then, check the factuality of the revised claim based on the above context only.
+
+    Output strictly in valid JSON format only, with no extra text, explanations, or comments.
+
+    "Output format:"
+    {
+    "label:" "SUPPORTS" | "REFUTES" | "NOTENOUGHINFO",
+    "response:" "short, direct evidence extracted or paraphrased from context"
+    }
+
+    "Follow these rules carefully:"
+    1. "SUPPORTS:" if the context explicitly confirms the claim.
+    2. "REFUTES:" if the context explicitly contradicts the claim.
+    3. "NOTENOUGHINFO:" if the context lacks direct or clear information about the claim, even if it is indirectly related or mentions similar facts.
+    4. "response" must be a short, direct evidence to justify your selected label, based on the context.
+simplify_qa: 
+    You are a fact checking assistant.
+    Your task is to determine whether the context supports, refutes, or does not provide enough information about the claim.
+
+    "Context:"
+    -------------
+    {context_str}
+    -------------
+
+    "Claim:" 
+    {query_str}
+
+    First, rewrite the claim to eliminate nested clauses or complex syntax. Ensure the claim does not become off-topic.
+    Then, check the factuality of the revised claim based on the above context only.
+
+    Output strictly in valid JSON format only, with no extra text, explanations, or comments.
+
+    "Output format:"
+    {
+    "label:" "SUPPORTS" | "REFUTES" | "NOTENOUGHINFO",
+    "response:" "short, direct evidence extracted or paraphrased from context"
+    }
+
+    "Follow these rules carefully:"
+    1. "SUPPORTS:" if the context explicitly confirms the claim.
+    2. "REFUTES:" if the context explicitly contradicts the claim.
+    3. "NOTENOUGHINFO:" if the context lacks direct or clear information about the claim, even if it is indirectly related or mentions similar facts.
+    4. "response" must be a short, direct evidence to justify your selected label, based on the context.

@@ -1,0 +1,5 @@
+files_*/
+files_*.tar.gz
+test.py
+extra/
+__pycache__/

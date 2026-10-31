@@ -75,7 +75,7 @@ attempt created 82 threads and spent minutes in policy selection; a four-thread
 retained in the logs, and restarted with the same budget ledger and cached
 indices. It is not treated as a completed training result.
 
-## Current hardware
+## Initial hardware
 
 DSMLP container `dsmlp-jupyter-x4gong`, NVIDIA GTX 1080 Ti (11,264 MiB),
 driver 535.161.08; Python 3.11.9. Package repairs currently use

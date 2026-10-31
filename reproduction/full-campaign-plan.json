@@ -14,5 +14,6 @@
   "cpu_threads": 4,
   "guard": "Reserve maximum; settle verified successful usage; retain failed reservations",
   "code_fix": "Initialize params_updates on each training row",
-  "source_sha256": "b41041cf01bee7b5bdf32c19449352be0df2f091d5ab17705a5f725b339f37fd"
+  "source_sha256": "b41041cf01bee7b5bdf32c19449352be0df2f091d5ab17705a5f725b339f37fd",
+  "document_role": "Historical pre-run baseline preview; actual executed settings are in results/hotpotqa-full-linucb/*-plan.json"
 }

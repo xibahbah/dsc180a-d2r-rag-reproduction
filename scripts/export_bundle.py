@@ -17,7 +17,7 @@ def tracked(directory):
 
 
 def main():
-    paths = tracked(ROOT) + tracked(ROOT / 'D2R-RAG')
+    paths = tracked(ROOT)
     destination = ROOT / 'dist/d2r-rag-reproduction.zip'
     destination.parent.mkdir(exist_ok=True)
     with zipfile.ZipFile(destination, 'w', zipfile.ZIP_DEFLATED) as archive:
