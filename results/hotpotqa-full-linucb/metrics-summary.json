@@ -1,0 +1,11 @@
+{
+  "rows": 500,
+  "valid_scores": {
+    "answer_relevancy": 500,
+    "faithfulness": 500
+  },
+  "means": {
+    "answer_relevancy": 0.2839509743237685,
+    "faithfulness": 0.6917181818181819
+  }
+}

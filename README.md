@@ -1,3 +1,11 @@
+## Completed HotpotQA / LinUCB campaign
+
+Full 500-case evaluation: baseline EM **35.4%**, learned repair EM **39.8%**
+(paper: 36.2% / 39.8%). Two training epochs and both 500-case RAGAS evaluations
+completed. Campaign accounted amount **$1.408**, including failed-request
+reservations, under the original $5 cap. This is a scoped reproduction, not all
+paper experiments. See [full report](results/hotpotqa-full-linucb/REPORT.md).
+
 # DSC 180A — D2R-RAG reproduction
 
 Independent reproduction work for [Diagnosing and Repairing Factual Errors in RAG under Budget Constraints](https://proceedings.mlr.press/v318/hashemifar26a.html), Canadian AI 2026. See [attribution](NOTICE.md).

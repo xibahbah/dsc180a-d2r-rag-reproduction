@@ -33,7 +33,7 @@ def main():
             'campaign': str(campaign), 'budget_usd': str(args.budget_usd),
             'training_examples': 500, 'validation_examples': 500,
             'training_epochs': 2, 'model': 'gpt-4o-mini', 'policy': 'LinUCB',
-            'request_ceiling': 10000, 'max_output_tokens': 16384,
+            'request_ceiling': 50000, 'max_output_tokens': 16384,
             'hash_seed': 0, 'cpu_threads': 4,
             'guard': 'Reserve maximum; settle verified successful usage; retain failed reservations',
             'code_fix': 'Initialize params_updates on each training row',
@@ -68,7 +68,7 @@ def main():
     import budget_guard
     import metered_guard
     budget_guard.LIMIT = ceiling
-    budget_guard.MAX_REQUESTS = 10000
+    budget_guard.MAX_REQUESTS = 50000
     budget_guard.MAX_OUTPUT = 16384  # GPT-4o-mini's original model output ceiling.
     budget_guard.MAX_COMPLETIONS = 3  # RAGAS can request multiple completions.
     metered_guard.install(ledger)

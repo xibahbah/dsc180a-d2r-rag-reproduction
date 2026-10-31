@@ -1,7 +1,7 @@
 {
-  "state": "failed",
-  "stage": "baseline",
-  "exit_code": 1,
-  "pid": 1842,
-  "updated_utc": "2026-10-31T02:58:40.168894+00:00"
+  "state": "completed",
+  "stage": "all",
+  "exit_code": 0,
+  "pid": 44,
+  "updated_utc": "2026-10-31T18:35:38.280861+00:00"
 }

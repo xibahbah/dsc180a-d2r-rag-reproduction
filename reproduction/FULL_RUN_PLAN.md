@@ -21,7 +21,7 @@ Do not delete it or create another campaign to reset an exhausted allowance.
 - Fixed Python hash seed 0; four CPU threads; GTX 1080 Ti.
 - Original source retained. Apply the documented training-variable fix to the
   executed in-memory copy; record source hash and fix in each stage plan.
-- Maximum 10,000 API attempts; text-only OpenAI chat completions, at most
+- Maximum 50,000 API attempts; text-only OpenAI chat completions, at most
   three completions per request (for evaluation), at most 32 KiB request input.
 - The guard uses $0.15 / $0.60 per million input/output tokens. It counts cached
   tokens at the undiscounted rate conservatively. No other models are allowed.
@@ -61,3 +61,11 @@ Simulated spending-control tests cover rejection,
 output caps, persistent reservations, sync/async requests, successful token
 settlement, multiple completions, changed allowances, failures and an exhausted allowance. No full-size paid run was
 used to test these controls.
+
+## Recovery after request ceiling
+
+The baseline and both training epochs completed. Repair stopped at the original
+10,000-attempt ceiling with $0.53801295 accounted for, including unsettled
+reservations. Increase only the technical attempt ceiling to 50,000 to finish
+the same authorized stages. The original $5 ledger, request count and monetary
+limit are retained; completed stages are skipped. No new campaign is created.
