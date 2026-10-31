@@ -1,0 +1,7 @@
+{
+  "repository": "https://github.com/CyberScienceLab/D2R-RAG",
+  "commit": "5573ce938cee8b79f2e73ccc05f8fff803f464ed",
+  "initial_target": "HotpotQA, LinUCB",
+  "generator": "gpt-4o-mini",
+  "status": "Preparation only; no experiment completed"
+}

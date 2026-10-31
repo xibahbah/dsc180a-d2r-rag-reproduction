@@ -1,0 +1,16 @@
+{
+  "epochs_seen": [
+    "Epoch: 1",
+    "Epoch: 2"
+  ],
+  "arms": 11,
+  "context_features": 786,
+  "updated_arms": [
+    0,
+    1
+  ],
+  "nonzero_reward_arms": [
+    0,
+    1
+  ]
+}

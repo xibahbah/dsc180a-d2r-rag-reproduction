@@ -1,0 +1,7 @@
+{
+  "host": "YOUR_UCSD_USERNAME@dsmlp-login.ucsd.edu",
+  "remote_dir": "d2r-reproduction",
+  "cpus": 4,
+  "memory_gb": 32,
+  "gpus": 1
+}

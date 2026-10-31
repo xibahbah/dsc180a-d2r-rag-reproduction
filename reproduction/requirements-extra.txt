@@ -1,0 +1,13 @@
+# Direct imports omitted from the upstream dependency list. Versions remain
+# provisional until tested in DSMLP; each run records the resolved environment.
+llama-index-llms-openai
+datasets
+PyYAML
+scipy
+pandas
+numpy
+tqdm
+transformers<5
+sentencepiece
+protobuf
+PyStemmer

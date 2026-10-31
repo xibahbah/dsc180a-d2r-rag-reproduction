@@ -1,0 +1,216 @@
+Stage: smoke; output: results/20261031T003857Z-smoke-MeuJQS
+2026-10-31 00:39:06.703131: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-10-31 00:39:06.703202: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-10-31 00:39:06.704734: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-10-31 00:39:06.713780: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Static source checks completed; this does not validate an experiment.
+Preflight passed. Run a small experiment before claiming reproduction.
+SMOKE ONLY: 2 validation questions; secondary contexts from 5 examples.
+2026-10-31 00:39:22.909880: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-10-31 00:39:22.909947: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-10-31 00:39:22.911566: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-10-31 00:39:22.919674: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Generating train split:   0%|          | 0/90447 [00:00<?, ? examples/s]Generating train split:   1%|          | 1000/90447 [00:00<00:16, 5557.64 examples/s]Generating train split:   6%|▌         | 5000/90447 [00:00<00:04, 17669.92 examples/s]Generating train split:   9%|▉         | 8000/90447 [00:00<00:04, 18910.84 examples/s]Generating train split:  12%|█▏        | 11000/90447 [00:00<00:04, 18495.65 examples/s]Generating train split:  17%|█▋        | 15000/90447 [00:00<00:03, 19483.83 examples/s]Generating train split:  20%|█▉        | 18000/90447 [00:01<00:03, 18570.02 examples/s]Generating train split:  24%|██▍       | 22000/90447 [00:01<00:03, 20451.16 examples/s]Generating train split:  29%|██▊       | 26000/90447 [00:01<00:02, 22262.13 examples/s]Generating train split:  32%|███▏      | 29000/90447 [00:01<00:02, 20518.79 examples/s]Generating train split:  36%|███▋      | 33000/90447 [00:01<00:02, 21237.33 examples/s]Generating train split:  40%|███▉      | 36000/90447 [00:01<00:02, 20304.20 examples/s]Generating train split:  44%|████▍     | 40000/90447 [00:01<00:02, 23025.22 examples/s]Generating train split:  49%|████▊     | 44000/90447 [00:02<00:01, 23554.75 examples/s]Generating train split:  53%|█████▎    | 48224/90447 [00:02<00:02, 19945.22 examples/s]Generating train split:  58%|█████▊    | 52224/90447 [00:02<00:01, 22065.30 examples/s]Generating train split:  61%|██████    | 55224/90447 [00:02<00:01, 20563.53 examples/s]Generating train split:  65%|██████▌   | 59224/90447 [00:02<00:01, 21734.43 examples/s]Generating train split:  70%|██████▉   | 63224/90447 [00:03<00:01, 20754.05 examples/s]Generating train split:  75%|███████▌  | 68224/90447 [00:03<00:00, 23411.39 examples/s]Generating train split:  80%|███████▉  | 72224/90447 [00:03<00:00, 22164.11 examples/s]Generating train split:  84%|████████▍ | 76224/90447 [00:03<00:00, 23450.08 examples/s]Generating train split:  89%|████████▊ | 80224/90447 [00:03<00:00, 25040.56 examples/s]Generating train split:  92%|█████████▏| 83224/90447 [00:04<00:00, 9172.33 examples/s] Generating train split: 100%|██████████| 90447/90447 [00:04<00:00, 18587.54 examples/s]
+Generating validation split:   0%|          | 0/7405 [00:00<?, ? examples/s]Generating validation split:  14%|█▎        | 1000/7405 [00:00<00:00, 6566.09 examples/s]Generating validation split:  68%|██████▊   | 5000/7405 [00:00<00:00, 17358.60 examples/s]Generating validation split: 100%|██████████| 7405/7405 [00:00<00:00, 15874.59 examples/s]
+Generating test split:   0%|          | 0/7405 [00:00<?, ? examples/s]Generating test split:  14%|█▎        | 1000/7405 [00:00<00:01, 6403.01 examples/s]Generating test split:  68%|██████▊   | 5000/7405 [00:00<00:00, 20714.85 examples/s]Generating test split: 100%|██████████| 7405/7405 [00:00<00:00, 16116.12 examples/s]
+Num unique contexts: 20 50
+linucb files_hotpotqa_v None True True 3 6 None
+[MSG] Building knowledge graph...
+kb_documents size: 20
+Doc ID: 5082d315-56f4-436e-8b3b-feb826264e65
+Text: The Village Accountant (variously known as "Patwari", "Talati",
+"Patel", "Karnam", "Adhikari", "Shanbogaru","Patnaik" etc.) is an
+administrative government position found in rural parts of the Indian
+sub-continent. The office and the officeholder are called the
+"patwari" in Telangana, Bengal, North India and in Pakistan while in
+Sindh it is call...
+Applying transformations:   0%|          | 0/1 [00:00<?, ?it/s]Applying transformations: 100%|██████████| 1/1 [00:00<00:00, 141.98it/s]
+Processing nodes:   0%|          | 0/20 [00:00<?, ?it/s]
+Generating embeddings:   0%|          | 0/6 [00:00<?, ?it/s][AGenerating embeddings: 100%|██████████| 6/6 [00:00<00:00, 61.98it/s]
+Processing nodes:   5%|▌         | 1/20 [00:02<00:43,  2.27s/it]
+Generating embeddings:   0%|          | 0/4 [00:00<?, ?it/s][AGenerating embeddings: 100%|██████████| 4/4 [00:00<00:00, 444.55it/s]
+Processing nodes:  10%|█         | 2/20 [00:03<00:26,  1.44s/it]
+Generating embeddings:   0%|          | 0/15 [00:00<?, ?it/s][AGenerating embeddings: 100%|██████████| 15/15 [00:00<00:00, 809.42it/s]
+Processing nodes:  15%|█▌        | 3/20 [00:04<00:26,  1.57s/it]
+Generating embeddings:   0%|          | 0/6 [00:00<?, ?it/s][AGenerating embeddings: 100%|██████████| 6/6 [00:00<00:00, 592.82it/s]
+Processing nodes:  20%|██        | 4/20 [00:06<00:25,  1.62s/it]
+Generating embeddings:   0%|          | 0/2 [00:00<?, ?it/s][AGenerating embeddings: 100%|██████████| 2/2 [00:00<00:00, 227.69it/s]
+Processing nodes:  25%|██▌       | 5/20 [00:07<00:19,  1.30s/it]
+Generating embeddings:   0%|          | 0/9 [00:00<?, ?it/s][AGenerating embeddings: 100%|██████████| 9/9 [00:00<00:00, 947.34it/s]
+Processing nodes:  30%|███       | 6/20 [00:09<00:20,  1.45s/it]
+Generating embeddings:   0%|          | 0/6 [00:00<?, ?it/s][AGenerating embeddings: 100%|██████████| 6/6 [00:00<00:00, 653.03it/s]
+Processing nodes:  35%|███▌      | 7/20 [00:09<00:16,  1.24s/it]
+Generating embeddings:   0%|          | 0/5 [00:00<?, ?it/s][AGenerating embeddings: 100%|██████████| 5/5 [00:00<00:00, 504.75it/s]
+Processing nodes:  40%|████      | 8/20 [00:11<00:14,  1.23s/it]
+Generating embeddings:   0%|          | 0/5 [00:00<?, ?it/s][AGenerating embeddings: 100%|██████████| 5/5 [00:00<00:00, 562.04it/s]
+Processing nodes:  45%|████▌     | 9/20 [00:11<00:12,  1.12s/it]
+Generating embeddings:   0%|          | 0/2 [00:00<?, ?it/s][AGenerating embeddings: 100%|██████████| 2/2 [00:00<00:00, 240.39it/s]
+Processing nodes:  50%|█████     | 10/20 [00:12<00:10,  1.01s/it]You seem to be using the pipelines sequentially on GPU. In order to maximize efficiency please use a dataset
+
+Generating embeddings:   0%|          | 0/5 [00:00<?, ?it/s][AGenerating embeddings: 100%|██████████| 5/5 [00:00<00:00, 542.83it/s]
+Processing nodes:  55%|█████▌    | 11/20 [00:13<00:09,  1.08s/it]
+Generating embeddings:   0%|          | 0/3 [00:00<?, ?it/s][AGenerating embeddings: 100%|██████████| 3/3 [00:00<00:00, 349.59it/s]
+Processing nodes:  60%|██████    | 12/20 [00:14<00:07,  1.11it/s]
+Generating embeddings:   0%|          | 0/1 [00:00<?, ?it/s][AGenerating embeddings: 100%|██████████| 1/1 [00:00<00:00, 65.43it/s]
+Processing nodes:  65%|██████▌   | 13/20 [00:14<00:05,  1.31it/s]
+Generating embeddings:   0%|          | 0/13 [00:00<?, ?it/s][AGenerating embeddings: 100%|██████████| 13/13 [00:00<00:00, 737.84it/s]
+Processing nodes:  70%|███████   | 14/20 [00:16<00:06,  1.05s/it]
+Generating embeddings:   0%|          | 0/3 [00:00<?, ?it/s][AGenerating embeddings: 100%|██████████| 3/3 [00:00<00:00, 329.15it/s]
+Processing nodes:  75%|███████▌  | 15/20 [00:17<00:04,  1.12it/s]
+Generating embeddings:   0%|          | 0/9 [00:00<?, ?it/s][AGenerating embeddings: 100%|██████████| 9/9 [00:00<00:00, 996.14it/s]
+Processing nodes:  80%|████████  | 16/20 [00:18<00:04,  1.02s/it]
+Generating embeddings:   0%|          | 0/2 [00:00<?, ?it/s][AGenerating embeddings: 100%|██████████| 2/2 [00:00<00:00, 221.78it/s]
+Processing nodes:  85%|████████▌ | 17/20 [00:19<00:02,  1.06it/s]
+Generating embeddings:   0%|          | 0/2 [00:00<?, ?it/s][AGenerating embeddings: 100%|██████████| 2/2 [00:00<00:00, 226.08it/s]
+Processing nodes:  90%|█████████ | 18/20 [00:20<00:02,  1.08s/it]
+Generating embeddings:   0%|          | 0/2 [00:00<?, ?it/s][AGenerating embeddings: 100%|██████████| 2/2 [00:00<00:00, 227.77it/s]
+Processing nodes:  95%|█████████▌| 19/20 [00:21<00:00,  1.08it/s]
+Generating embeddings:   0%|          | 0/12 [00:00<?, ?it/s][AGenerating embeddings: 100%|██████████| 12/12 [00:00<00:00, 582.44it/s]
+Processing nodes: 100%|██████████| 20/20 [00:22<00:00,  1.17s/it]Processing nodes: 100%|██████████| 20/20 [00:22<00:00,  1.14s/it]
+[MSG] Knowledge graph is ready to go.
+files_hotpotqa_v/knowledge_gragh_plot.html
+[MSG] Building nodes from documents...
+nodes size: 26
+[MSG] Building Dense (k=10) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=False, prompt_edit=simple_qa)
+[MSG] Loading Dense (k=10) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=False, prompt_edit=paraphrase_qa)
+[MSG] Loading Dense (k=10) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=False, prompt_edit=simplify_qa)
+[MSG] Loading Dense (k=10) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=True, prompt_edit=simple_qa)
+[MSG] Loading Dense (k=10) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=True, prompt_edit=paraphrase_qa)
+[MSG] Loading Dense (k=10) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=True, prompt_edit=simplify_qa)
+[MSG] Loading Dense (k=5) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=False, prompt_edit=simple_qa)
+[MSG] Loading Dense (k=5) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=False, prompt_edit=paraphrase_qa)
+[MSG] Loading Dense (k=5) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=False, prompt_edit=simplify_qa)
+[MSG] Loading Dense (k=5) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=True, prompt_edit=simple_qa)
+[MSG] Loading Dense (k=5) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=True, prompt_edit=paraphrase_qa)
+[MSG] Loading Dense (k=5) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=True, prompt_edit=simplify_qa)
+[MSG] Loading Dense (k=20) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=False, prompt_edit=simple_qa)
+[MSG] Loading Dense (k=20) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=False, prompt_edit=paraphrase_qa)
+[MSG] Loading Dense (k=20) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=False, prompt_edit=simplify_qa)
+[MSG] Loading Dense (k=20) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=True, prompt_edit=simple_qa)
+[MSG] Loading Dense (k=20) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=True, prompt_edit=paraphrase_qa)
+[MSG] Loading Dense (k=20) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=True, prompt_edit=simplify_qa)
+[MSG] Building BM25 (k=10) retriever...
+Finding newlines for mmindex:   0%|          | 0.00/36.2k [00:00<?, ?B/s]                                                                         [MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=False, prompt_edit=simple_qa)
+[MSG] Loading BM25 (k=10) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=False, prompt_edit=paraphrase_qa)
+[MSG] Loading BM25 (k=10) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=False, prompt_edit=simplify_qa)
+[MSG] Loading BM25 (k=10) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=True, prompt_edit=simple_qa)
+[MSG] Loading BM25 (k=10) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=True, prompt_edit=paraphrase_qa)
+[MSG] Loading BM25 (k=10) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=True, prompt_edit=simplify_qa)
+[MSG] Loading BM25 (k=5) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=False, prompt_edit=simple_qa)
+[MSG] Loading BM25 (k=5) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=False, prompt_edit=paraphrase_qa)
+[MSG] Loading BM25 (k=5) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=False, prompt_edit=simplify_qa)
+[MSG] Loading BM25 (k=5) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=True, prompt_edit=simple_qa)
+[MSG] Loading BM25 (k=5) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=True, prompt_edit=paraphrase_qa)
+[MSG] Loading BM25 (k=5) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=True, prompt_edit=simplify_qa)
+[MSG] Loading BM25 (k=20) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=False, prompt_edit=simple_qa)
+[MSG] Loading BM25 (k=20) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=False, prompt_edit=paraphrase_qa)
+[MSG] Loading BM25 (k=20) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=False, prompt_edit=simplify_qa)
+[MSG] Loading BM25 (k=20) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=True, prompt_edit=simple_qa)
+[MSG] Loading BM25 (k=20) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=True, prompt_edit=paraphrase_qa)
+[MSG] Loading BM25 (k=20) retriever...
+[MSG] Building RAG query engine...
+[MSG] RAG query engine is ready to go. (reranker=True, prompt_edit=simplify_qa)
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:07<00:07,  7.12s/it]100%|██████████| 2/2 [00:10<00:00,  4.64s/it]100%|██████████| 2/2 [00:10<00:00,  5.01s/it]
+######## kg_consistency (Correct) #######
+kg_consistency
+MISSING    1
+Name: count, dtype: int64
+######## kg_consistency (Incorrect) #######
+kg_consistency
+MISSING    1
+Name: count, dtype: int64
+######## query_entailment (Correct) #######
+query_entailment
+ENTAILMENT    1
+Name: count, dtype: int64
+######## query_entailment (Incorrect) #######
+query_entailment
+ENTAILMENT    1
+Name: count, dtype: int64
+######## response_entailment (Correct) #######
+response_entailment
+ENTAILMENT    1
+Name: count, dtype: int64
+######## response_entailment (Incorrect) #######
+response_entailment
+ENTAILMENT    1
+Name: count, dtype: int64
+######## failure_label (Correct) #######
+failure_label
+NO_FAILURE    1
+Name: count, dtype: int64
+######## failure_label (Incorrect) #######
+failure_label
+NO_FAILURE    1
+Name: count, dtype: int64

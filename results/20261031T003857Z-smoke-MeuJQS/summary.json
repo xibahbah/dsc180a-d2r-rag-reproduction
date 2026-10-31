@@ -1,0 +1,84 @@
+{
+  "scope": "Two-question HotpotQA integration test; not a full paper reproduction",
+  "baseline": {
+    "examples": 2,
+    "correct": 1,
+    "upstream_em_percent": 50.0,
+    "mean_reported_latency_seconds": 2.2633189077023417,
+    "mean_reported_incremental_vram_mib": 1.21826171875,
+    "diagnoses": {
+      "NO_FAILURE": 2
+    },
+    "repair_actions": {
+      "-1": 2
+    },
+    "predictions": [
+      {
+        "question": "Were Scott Derrickson and Ed Wood of the same nationality?",
+        "response": "Yes, both Scott Derrickson and Ed Wood were American. Ed Wood was an American filmmaker known for his cult films, while Scott Derrickson is an American filmmaker who directed the short \"Love in the Ruins.\" Therefore, they share the same nationality as Americans.",
+        "gt_response": "yes",
+        "EM": "True",
+        "failure_label": "NO_FAILURE"
+      },
+      {
+        "question": "What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?",
+        "response": "The provided context is insufficient regarding the government position held by the woman who portrayed Corliss Archer in the film Kiss and Tell.",
+        "gt_response": "Chief of Protocol",
+        "EM": "False",
+        "failure_label": "NO_FAILURE"
+      }
+    ]
+  },
+  "policy_evaluation": {
+    "examples": 2,
+    "correct": 1,
+    "upstream_em_percent": 50.0,
+    "mean_reported_latency_seconds": 2.02740532415919,
+    "mean_reported_incremental_vram_mib": 1.21826171875,
+    "diagnoses": {
+      "NO_FAILURE": 2
+    },
+    "repair_actions": {
+      "-1": 2
+    },
+    "predictions": [
+      {
+        "question": "Were Scott Derrickson and Ed Wood of the same nationality?",
+        "response": "Yes, both Scott Derrickson and Ed Wood were American. Ed Wood was a cult filmmaker known for his unique style and films, while Scott Derrickson is an American filmmaker who directed and produced various works. The context indicates that both individuals are associated with the American film industry, confirming their shared nationality.",
+        "gt_response": "yes",
+        "EM": "True",
+        "failure_label": "NO_FAILURE"
+      },
+      {
+        "question": "What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?",
+        "response": "The provided context is insufficient regarding the government position held by the woman who portrayed Corliss Archer in the film Kiss and Tell.",
+        "gt_response": "Chief of Protocol",
+        "EM": "False",
+        "failure_label": "NO_FAILURE"
+      }
+    ]
+  },
+  "budget_reservations": {
+    "reserved_nanodollars": 20400600,
+    "requests": 31,
+    "updated_unix": 1793408830.0498857,
+    "limit_nanodollars": 1000000000
+  },
+  "policy_checkpoint_saved": true,
+  "training_audit": {
+    "epochs_seen": [
+      "Epoch: 1",
+      "Epoch: 2"
+    ],
+    "arms": 11,
+    "context_features": 786,
+    "updated_arms": [
+      0,
+      1
+    ],
+    "nonzero_reward_arms": [
+      0,
+      1
+    ]
+  }
+}
