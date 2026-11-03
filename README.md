@@ -64,6 +64,9 @@ Keys, credentials, environments and downloaded dataset/model/index caches are
 excluded. Reading and checking saved results requires no API key, GPU or DSMLP.
 Full package snapshots record provenance and are not portable installation files.
 
+For our complete laptop → shared SSH → course worker → environment/API → background-job setup,
+see [the actual DSMLP connection pipeline](docs/DSMLP_CONNECTION_PIPELINE.md).
+
 ## Run code on a Linux GPU worker
 
 A fresh installation on another machine still needs validation. Critical versions
