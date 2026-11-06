@@ -1,0 +1,12 @@
+{
+  "rows": 500,
+  "upstream_em_percent": 35.8,
+  "mean_reported_latency_seconds": 1.1468662694245577,
+  "mean_reported_incremental_vram_mib": 1.26037890625,
+  "diagnoses": {
+    "NO_FAILURE": 260,
+    "INSUFFICIENT_EVIDENCE_FAILURE": 104,
+    "WRONG_RESPONSE_FAILURE": 104,
+    "WRONG_PREDICATE_FAILURE": 32
+  }
+}

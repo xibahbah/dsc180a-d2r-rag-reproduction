@@ -19,6 +19,13 @@ These are ledger estimates, not a billing statement. Original campaign cap: $5.
 answer containment, not strict whole-response exact match. A response can receive
 credit while abstaining if it mentions the gold answer. See the [example audit](docs/EXAMPLE_ANALYSIS.md).
 
+## Repeat run
+
+A second HotpotQA / LinUCB run scored **35.8% before repair and 40.4% after repair**
+under the authors' answer scorer, a **4.6-point gain** compared with **4.4 points**
+on the first run. The API ledger accounted for **$1.22** under a separate $3.40 cap.
+See the [side-by-side results and saved tables](results/hotpotqa-linucb-rerun-01/REPORT.md).
+
 ## Start here
 
 - **One-page reproduction summary:** [summary](docs/REPRODUCTION_SUMMARY.md).
